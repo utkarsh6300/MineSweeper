@@ -1,5 +1,5 @@
 import Cell as Cell
-import RandomNumberGenerator as RandomNumberGenerator
+import util.RandomNumberGenerator as RandomNumberGenerator
 class Grid (val rows:Int = 8,val columns:Int=8,val numberOfMines:Int=10,var numberOfExploredCells:Int=0){
     val grid= Array(rows){ _ ->
         Array(columns){ _ ->
@@ -10,7 +10,7 @@ class Grid (val rows:Int = 8,val columns:Int=8,val numberOfMines:Int=10,var numb
     // assigns mine to random cells in grid
     fun assignMines(){
         val numberGenerator = RandomNumberGenerator()
-        for( i in 0..numberOfMines){
+        for( i in 0 until numberOfMines){
             val randomRowNumber = numberGenerator.randomInteger(0,rows-1);
             val randomColumnNumber = numberGenerator.randomInteger(0,columns-1);
             grid[randomRowNumber][randomColumnNumber].mine=true

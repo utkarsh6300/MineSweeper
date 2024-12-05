@@ -16,7 +16,7 @@ class Game {
         }
         return false
     }
-    // eplores all connected cells that are safe untill has atleast one mine in neighbour
+    // explores all connected cells that are safe until has at least one mine in neighbour
     fun exploreSafeCells(row:Int,column:Int,minesweeper:Grid){
         val grid:Array<Array<Cell>> =minesweeper.grid
         val queue: Queue<Pair<Int, Int>> = LinkedList<Pair<Int, Int>>()
