@@ -33,5 +33,14 @@ class GameTest {
             }
         })
     }
-    // test case for winning game and losing games
+    // test cases for winning game and losing games
+    //losing game check is redundant for now can be removed
+    @Test
+    fun `verify losing game scenario`() {
+        val minesweeper = Grid()
+        val grid = minesweeper.grid
+        grid[0][0].mine=true
+        val currentCell =grid[0][0].mine
+        assertFalse(currentCell, "Game should be lost if a mine is triggered.")
+    }
 }
